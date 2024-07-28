@@ -1,0 +1,112 @@
+header{
+    background-color: rgb(123, 0, 255);
+    display:flex;
+    grid-area: 1 / 1 / 2 / 3;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.sidebar{
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:1rem;
+    padding:0.5rem;
+    background-color: rgb(197, 195, 195);
+}
+
+.content{
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: white;
+
+}
+.container{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns:  1fr 5fr;
+    grid-template-rows: 1fr 5fr;
+    
+}
+
+body{
+    background-color: rgb(116, 183, 116);
+    font-family: sans-serif;
+}
+
+/* popup css */
+
+.modal::backdrop{
+    opacity: 0.4;
+    background: linear-gradient(45deg, red, blue);
+}
+
+.modal{
+    padding:0px;
+}
+.modalDiv{
+    display: grid;
+    height: 400px;
+    width: 500px;
+    max-width: 600px;
+    max-height: 500px;
+    grid-template-columns: 2fr 6fr;
+    grid-template-rows: 1fr 5fr;
+    margin:0px;
+    /* position: fixed; */
+}
+
+.modalTitle{
+    grid-area: 1 / 1 / 2 / 3;
+    background-color:rgb(123, 0, 255) ;
+    display:flex;
+    justify-content: space-between;
+}
+
+.modalSidebar{
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: rgb(216, 216, 216);
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 1px solid black;
+    
+}
+
+.modalSidebar > p{
+    font-size: 1rem;
+    color:rgb(0, 0, 0);
+    margin:0;
+    padding:1rem;
+}
+
+.modalSidebar > p:hover{
+    color:rgb(185, 105, 186);
+    font-size: 1.2rem;
+    background-color: rgb(254, 224, 224);
+
+}
+
+.modalSidebar > p.active{
+    color:rgb(185, 105, 186);
+    font-size: 1.2rem;
+    background-color: rgb(254, 224, 224);
+}
+
+
+
+.modalContent{
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: white;
+}
+
+/* modalContent */
+
+[data-tabContent]{
+    display:none;
+}
+
+.activeContent[data-tabContent]{
+    display:block;
+}

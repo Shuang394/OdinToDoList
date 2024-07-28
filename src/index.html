@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "container">
+        <header>
+            <p>// TO - DO</p>
+            <button class = "openModal">+</button>
+        </header>
+        <div class = "sidebar">
+            <div class="menu1">Home</div>
+            <div class="menu2">Today</div>
+            <div class="menu3">This week</div>
+            <div class="menu4">Projects</div>
+        </div>
+        <div class = "content"></div>
+    </div>
+
+    <dialog class = "modal" id = "modal">
+        <div class = "modalDiv">
+            <div class = "modalTitle">
+                <p>Create a...</p>
+                <button class = "closeModal">
+                    X
+                </button>
+            </div>
+            <div class = "modalSidebar">
+                <p class = "active" data-tabTarget = "#toDo">To Do</p>
+                <p data-tabTarget = "#project">Project </p>
+                <p data-tabTarget = "#note">Note</p>
+            </div>
+            <div class = 'modalContent'>
+                <div data-tabContent id = "toDo" class = "activeContent">
+                    <div>
+                        <form>
+                            <div>
+                                <input type = 'text' id = "toDoTitle" placeholder="Title: e.g Pay bills" required>
+                            </div>
+                            
+                            <div>
+                                <input type = 'text' id = "toDoDescription" placeholder="Description: Location, amount etc.">
+                            </div>
+    
+                            <div>
+                                <input type = 'date' id = "toDoDate" required>
+                            </div>
+    
+                            <div>
+                                <input type = 'radio' name = "priority" value = "low" id = "toDoLow">
+                                <label for="toDoLow">Low</label>
+    
+                                <input type = 'radio' name = "priority" value = "medium" id = "toDoMedium">
+                                <label for="toDoMedium">Medium</label>
+    
+                                <input type = 'radio' name = "priority" value = "high" id = "toDoHigh">
+                                <label for="toDoHigh">High</label>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div data-tabContent id = "project"></div>
+                <div data-tabContent id = "note"></div>
+            </div>
+        </div>
+    </dialog>
+
+    
+</body>
+</html>
