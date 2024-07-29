@@ -1,18 +1,12 @@
 import './style.css';
 import {toDoList, project} from './todoObj';
-// let content = document.querySelector('.content');
-
-// content.addEventListener('DOMContentLoaded', () => {
-//     //if local storage is empty
-
-//     //if local storage has something
-
-
-// })
+import { toDoEventListener } from './formLogic';
+import { modalTab, homeTab } from './tabLogic';
 
 let openModal = document.querySelector('.openModal');
 let closeModal = document.querySelector('.closeModal');
 let modal = document.querySelector('.modal');
+
 
 openModal.addEventListener('click', () => {
     //create new div for project with a button to add todo items
@@ -23,15 +17,8 @@ closeModal.addEventListener('click', () => {
     modal.close();
 })
 
-//modalSidebar
-let sideBar = document.querySelector(".modalSidebar");
-let sidePara = sideBar.querySelectorAll("p");
+//create navigation for the modal tabs
+modalTab();
 
-sidePara.forEach(para => {
-    para.addEventListener('click', () =>{
-        sidePara.forEach(className => {
-            className.classList.remove("active");
-        })
-        para.classList.add("active");
-    })
-})
+let toDoForm = document.querySelector("#toDoForm");
+toDoForm.addEventListener('submit', toDoEventListener);

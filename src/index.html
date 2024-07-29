@@ -21,6 +21,8 @@
     </div>
 
     <dialog class = "modal" id = "modal">
+
+  
         <div class = "modalDiv">
             <div class = "modalTitle">
                 <p>Create a...</p>
@@ -29,44 +31,75 @@
                 </button>
             </div>
             <div class = "modalSidebar">
-                <p class = "active" data-tabTarget = "#toDo">To Do</p>
-                <p data-tabTarget = "#project">Project </p>
-                <p data-tabTarget = "#note">Note</p>
+                <p class = "active" data-tab-Target = "#toDo">To Do</p>
+                <p data-tab-Target = "#project">Project </p>
+                <p data-tab-Target = "#note">Note</p>
             </div>
+
             <div class = 'modalContent'>
-                <div data-tabContent id = "toDo" class = "activeContent">
-                    <div>
-                        <form>
-                            <div>
+                <div data-tab-Content id = "toDo" class = "activeContent">
+                    <div class = "toDo">
+                        <form id = "toDoForm">
+                            <div class = "toDoTitle">
                                 <input type = 'text' id = "toDoTitle" placeholder="Title: e.g Pay bills" required>
                             </div>
                             
-                            <div>
+                            <div class = "toDoDescription">
                                 <input type = 'text' id = "toDoDescription" placeholder="Description: Location, amount etc.">
                             </div>
     
-                            <div>
+                            <div class = "toDoDate">
+                                <Div>Date:</Div>
                                 <input type = 'date' id = "toDoDate" required>
                             </div>
     
-                            <div>
-                                <input type = 'radio' name = "priority" value = "low" id = "toDoLow">
-                                <label for="toDoLow">Low</label>
-    
-                                <input type = 'radio' name = "priority" value = "medium" id = "toDoMedium">
-                                <label for="toDoMedium">Medium</label>
-    
-                                <input type = 'radio' name = "priority" value = "high" id = "toDoHigh">
-                                <label for="toDoHigh">High</label>
+                            <div class = "toDoPriority">
+                                <div>Priority:</div>
+                                <div class = "toDoRadios">
+                                    <input type = 'radio' name = "priority" value = "low" id = "toDoLow">
+                                    <label for="toDoLow" class = "toDoLow">Low</label>
+        
+                                    <input type = 'radio' name = "priority" value = "medium" id = "toDoMedium">
+                                    <label for="toDoMedium" class = "toDoMedium">Medium</label>
+        
+                                    <input type = 'radio' name = "priority" value = "high" id = "toDoHigh">
+                                    <label for="toDoHigh" class = "toDoHigh">High</label>
+                                </div>
+                            </div>
+
+                            <div class = "toDoButton">
+                                <button type = "submit">Create To Do</button>
                             </div>
                         </form>
+
+
                     </div>
 
                 </div>
-                <div data-tabContent id = "project"></div>
-                <div data-tabContent id = "note"></div>
+                
+                <div data-tab-Content id="project">
+                    <div class = "projectDiv">
+                        <form>
+                            <div class = "projectInput">
+                                <input type = "text" id = "projectInput" placeholder = "Project Title..." required>
+                            </div>
+                            <div class = "projectButtonDiv">
+                                <button class = "projectButton">Create Project</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div data-tab-Content id = "note">
+
+                </div>
             </div>
         </div>
+        <!-- End of ToDo Modal -->
+
+
+
+
     </dialog>
 
     
